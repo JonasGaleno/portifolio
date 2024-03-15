@@ -19,7 +19,7 @@ export default function Contact () {
     const [templateID, setTemplateID] = useState(process.env.NEXT_PUBLIC_TEMPLATE_ID_EMAILJS || '');
     const [serviceID, setServiceID] = useState(process.env.NEXT_PUBLIC_SERVICE_ID_EMAILJS || '');
 
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    const { executeRecaptcha } = useGoogleReCaptcha(); // teste
 
     const messageVariants = {
 		hidden: { 
