@@ -2,6 +2,7 @@
 
 import { ReactElement } from 'react';
 import { Container, Separator, SubTitle, DescriptionText, FirstSection, SecondSection, Icon, Title, HeaderSection } from './styles';
+import { motion } from 'framer-motion';
 
 interface Props {
     icon: ReactElement;
@@ -24,22 +25,31 @@ export default function Card ({
     ...rest
 }: Props) {
     return (
-        <Container>
-            <HeaderSection>
-                <Icon>{icon}</Icon>
-                <Title>{title}</Title>
-                <DescriptionText>{mainDescription}</DescriptionText> 
-            </HeaderSection>
-            <Separator />
-            <FirstSection>
-                <SubTitle>{firstSubtitle}:</SubTitle>
-                <DescriptionText>{firtSubtitleDescription}</DescriptionText>
-            </FirstSection>
-            <Separator />
-            <SecondSection>
-                <SubTitle>{secondSubtitle}:</SubTitle>
-                <DescriptionText>{secondSubtitleDescription}</DescriptionText>
-            </SecondSection>
-        </ Container>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.03 }}
+            className="group"
+        >
+            <Container>
+                <HeaderSection>
+                    <Icon>{icon}</Icon>
+                    <Title>{title}</Title>
+                    <DescriptionText>{mainDescription}</DescriptionText> 
+                </HeaderSection>
+                <Separator />
+                <FirstSection>
+                    <SubTitle>{firstSubtitle}:</SubTitle>
+                    <DescriptionText>{firtSubtitleDescription}</DescriptionText>
+                </FirstSection>
+                <Separator />
+                <SecondSection>
+                    <SubTitle>{secondSubtitle}:</SubTitle>
+                    <DescriptionText>{secondSubtitleDescription}</DescriptionText>
+                </SecondSection>
+            </ Container>
+        </motion.div>
     );
 }

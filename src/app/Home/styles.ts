@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
-
-export const Apresentation = styled.div`
+export const Apresentation = styled(motion.div)`
     font-weight: 700;
     font-size: 40pt;
     text-align: center;
@@ -15,15 +15,13 @@ export const Apresentation = styled.div`
     }
 `;
 
-export const Summary = styled.div`
+export const Summary = styled(motion.div)`
     font-weight: 400;
     font-size: 15pt;
-    /* width: 600px; */
     width: 70%;
     text-align: center;
 
     @media screen and (max-width: 767px) { // 430
-        /* width: 350px; */
         width: 85%;
         margin-bottom: 20px;
     }
@@ -44,6 +42,7 @@ export const Container = styled.div.attrs<{$imageurl: string;}>(props => ({
     flex-direction: column;
     gap: 60px;
     background-image: url(${(props)=>props.$imageurl});
+    text-align: center;
 
     @media screen and (max-width: 767px) { // 430
         padding-top: 110px;
@@ -57,7 +56,7 @@ export const Container = styled.div.attrs<{$imageurl: string;}>(props => ({
     }
 `;
 
-export const AnimatedGif = styled.div.attrs<{$gifurl: string;}>(props => ({
+export const AnimatedGif = styled(motion.div).attrs<{$gifurl: string;}>(props => ({
     $gifurl: props.$gifurl,
 }))`
     height: 287px;

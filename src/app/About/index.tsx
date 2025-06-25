@@ -5,32 +5,28 @@ import { Container, ConteinerCards, Description } from './styles';
 import { FaDatabase } from "react-icons/fa";
 import { IoTerminal } from "react-icons/io5";
 import Title from '@/components/Title';
+import { motion } from 'framer-motion';
+import { toolsItems } from '@/data/tools';
 
 
 export default function About () {
     return (
         <Container id='sobre'>
             <Title title={'Sobre mim'}/>
-            <Description>Eu sou um desenvolvedor web construindo e realizando manutenções em sistemas há 2 anos e meio. Minha especialidade é a construção e integração de API's, portanto o back-end utilizando prioritariamente PHP é meu ponto forte, gosto muito de manipular dados e mexer com regras de negócio. Trabalhei em empresas que utilizam ERP's de gestão em diversas verticais do mercado e também com emissão de notas fiscais</Description>
+            <Description>Sou formado em Ciência da Computação pelo Centro Universitário de Brasília e atuo há cerca de 4 anos como Analista de Sistemas e Desenvolvedor Full Stack com foco em PHP. Tenho experiência no desenvolvimento e manutenção de sistemas ERP voltados para diversos segmentos, incluindo a emissão de notas fiscais e aplicações web. Ao longo da minha carreira, venho me especializando na criação e integração de APIs RESTful e possuo sólido domínio em bancos de dados relacionais, sempre buscando soluções eficientes e escaláveis.</Description>
             <ConteinerCards>
-                <Card
-                    icon={<FaDatabase size={28} color='#FFF'/>}
-                    title={'Desenvolvedor Back-end'}
-                    mainDescription={'Eu gosto de criar APIs e aplicar as melhores práticas na estruturação de dados'}
-                    firstSubtitle={'Linguagens que domino'}
-                    firtSubtitleDescription={'PHP, MySQL, PostgreSQL, Python, NodeJs'}
-                    secondSubtitle={'Ferramentas'}
-                    secondSubtitleDescription={'Composer, Laravel, Slim Framework, Doctrine, API Rest, API Soap, Linux Scriptcase, PgAdmin, XAMPP'}
-                />
-                <Card
-                    icon={<IoTerminal size={28} color='#FFF'/>}
-                    title={'Desenvolvedor Front-end'}
-                    mainDescription={'Aprendo cada vez mais com as novas tecnologias e me empolgo em suas ferramentas de estilização'}
-                    firstSubtitle={'Linguagens que domino'}
-                    firtSubtitleDescription={'CSS, SCSS, HTML, TypeScript, Javascript'}
-                    secondSubtitle={'Ferramentas'}
-                    secondSubtitleDescription={'Bootstrap, ReactJs, React Native, NextJs, Figma'}
-                />
+                {toolsItems.map((item, key) => (
+                    <Card
+                        icon={item.icon}
+                        title={item.title}
+                        mainDescription={item.mainDescription}
+                        firstSubtitle={item.firstSubtitle}
+                        firtSubtitleDescription={item.firtSubtitleDescription}
+                        secondSubtitle={item.secondSubtitle}
+                        secondSubtitleDescription={item.secondSubtitleDescription}
+                        key={key}
+                    />
+                ))}
             </ConteinerCards>
         </ Container>
     );
