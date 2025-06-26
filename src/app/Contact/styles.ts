@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from 'framer-motion';
 
-export const FormSection = styled.div`
+export const FormSection = styled(motion.div)`
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -67,7 +67,7 @@ export const FormButtonConteiner = styled.div`
 	justify-content: center;
 `;
 
-export const FormButton = styled.button`
+export const FormButton = styled(motion.button)`
     width: 200px;
 	padding: 15px 50px;
     border: none;
@@ -79,14 +79,9 @@ export const FormButton = styled.button`
     color: #FFF;
     letter-spacing: 1px;
     box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-    transition: transform .3s;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    transition-property: transform;
+    cursor: pointer;
 
     &:hover {
-        transform: translateY(-5px);
         background-color: #e882e6;
     }
 `;

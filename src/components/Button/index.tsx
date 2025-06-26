@@ -15,14 +15,23 @@ export default function Button ({
     path,
     ...rest
 }: Props) {
+    const variants = {
+        active: { opacity: 1, transition: { duration: 0.5, delay: 0.7 } },
+        hovering: { scale: 1.03 },
+        tapping: { scale: 0.98 }
+    };
+
     return (
-        <StyledLink
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-        >
-            <Link href={path} {...rest}>{title}</Link>
-        </StyledLink>
+        <Link href={path} {...rest}>
+            <StyledLink
+                initial={{ opacity: 0 }}
+                variants={variants}
+                animate={"active"}
+                whileHover={"hovering"}
+                whileTap={"tapping"}
+            >
+                {title}
+            </StyledLink>
+        </Link>
     );
 }

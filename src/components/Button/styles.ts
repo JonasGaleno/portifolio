@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
-export const StyledLink = styled(motion.div)`
+export const StyledLink = styled(motion.div)`  
     padding: 15px 50px;
     font-weight: 700;
     font-size: 12pt;

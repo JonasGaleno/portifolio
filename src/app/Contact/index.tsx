@@ -14,7 +14,6 @@ export default function Contact () {
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-
     const [userID, setUserID] = useState(process.env.NEXT_PUBLIC_USER_ID_EMAILJS || '');
     const [templateID, setTemplateID] = useState(process.env.NEXT_PUBLIC_TEMPLATE_ID_EMAILJS || '');
     const [serviceID, setServiceID] = useState(process.env.NEXT_PUBLIC_SERVICE_ID_EMAILJS || '');
@@ -41,7 +40,6 @@ export default function Contact () {
             return 'Campo Nome é obrigatório!';
         }
 
-        // const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
         const regex = /\S+@\S+\.\S+/;
 
         if (!email) {
@@ -85,9 +83,7 @@ export default function Contact () {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-
         setSuccess('');
-
         const resultError = validateForm(name, email, message);
 
         if (resultError !== null) {
@@ -136,7 +132,12 @@ export default function Contact () {
     return (
         <Container id='contato' $imageurl={background.src}>
             <Title title={'Contato'} />
-            <FormSection>
+            <FormSection
+                initial={{ opacity: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+            >
                 <Form onSubmit={(e) => handleSubmit(e)}>
                     <FormInputRow>
                         <FormLabel>Nome</FormLabel>
@@ -165,7 +166,15 @@ export default function Contact () {
                         />
                     </FormInputRow>
                     <FormButtonConteiner>
-                        <FormButton type="submit">enviar</FormButton>
+                        <FormButton 
+                            type="submit"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            enviar
+                        </FormButton>
                     </FormButtonConteiner>
                 </Form>
                 {error && (

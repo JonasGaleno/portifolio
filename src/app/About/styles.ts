@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
     padding-top: 150px;
@@ -22,7 +23,7 @@ export const Container = styled.div`
     }
 `;
 
-export const Description = styled.div`
+export const Description = styled(motion.div)`
     font-size: 14pt;
     /* width: 800px; */
     width: 70%;
@@ -37,13 +38,24 @@ export const Description = styled.div`
     }
 `;
 
-export const ConteinerCards = styled.div`
+export const ConteinerCards = styled(motion.div)`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 60px;
+    justify-content: center;
+    width: 40%;
 
-    @media screen and (max-width: 767px) { // 430
-        flex-direction: column;
+    @media screen and (max-width: 950px) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 950px) and (max-width: 1180px) {
+        width: 80%;
+    }
+
+    @media screen and (min-width: 1180px) and (max-width: 1565px) {
+        width: 60%;
     }
 `;

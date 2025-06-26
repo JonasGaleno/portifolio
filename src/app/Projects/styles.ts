@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
     padding-top: 150px;
     padding-bottom: 50px;
     display: flex;
@@ -20,9 +21,8 @@ export const Container = styled.div`
     }
 `;
 
-export const Description = styled.div`
+export const Description = styled(motion.div)`
     font-size: 14pt;
-    /* width: 800px; */
     width: 60%;
     text-align: center;
 

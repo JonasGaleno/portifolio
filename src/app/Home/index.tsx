@@ -4,8 +4,6 @@ import { Container, Apresentation, Summary, AnimatedGif } from './styles';
 import background from './../../../public/home-bg.png';
 import gif from './../../../public/animacao.gif';
 import Button from '@/components/Button';
-import { motion } from 'framer-motion';
-
 
 export default function Home () {
     return (
@@ -13,7 +11,7 @@ export default function Home () {
             <Apresentation
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
             >
                 Olá, eu sou Jonas Galeno
             </Apresentation>
@@ -23,7 +21,7 @@ export default function Home () {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: true }}
             />
             
@@ -32,7 +30,7 @@ export default function Home () {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
             >
-                Um desenvolvedor web orientado as melhores práticas de programação, construindo sites, API's e realizando integrações que levam sucesso ao produto
+                Desenvolvedor Full Stack focado em boas práticas, criando sites, sistemas, APIs e integrações que impulsionam o sucesso dos produtos.
             </Summary>
             
             <Button title='projetos' path='#projetos' />

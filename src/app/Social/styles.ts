@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
     position: fixed;
     top: 50%;
     padding: 5px;
@@ -19,7 +20,7 @@ export const Container = styled.div`
     }
 `;
 
-export const LinkSocial = styled.a`
+export const LinkSocial = styled(motion.a)`
     padding: 5px;
     display: flex;
     border-radius: 5px;

@@ -1,6 +1,6 @@
 'use client'
 
-import { Container, ProjectImageContainer, ProjectImage, ProjectInfo, ProjectDescription, ProjectTitle, ButtonContainer } from './styles';
+import { Container, ProjectImageContainer, ProjectImage, ProjectInfo, ProjectDescription, ProjectTitle, ButtonContainer, Separator } from './styles';
 import Button from '@/components/Button';
 
 interface Props {
@@ -24,13 +24,33 @@ export default function Project ({
     ...rest
 }: Props) {
     return (
-        <Container>
-            <ProjectImageContainer $imageurl={conatinerImage}>
+        <Container
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+        >
+            <ProjectImageContainer 
+                $imageurl={conatinerImage}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+            >
                 <ProjectImage src={projectImage} alt={altImage} />
             </ProjectImageContainer>
-            <ProjectInfo>
+            <ProjectInfo
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+            >
                 <ProjectTitle>{projectTitle}</ProjectTitle>
+                <Separator />
                 <ProjectDescription>{projectDescription}</ProjectDescription>
+                <Separator />
                 <ButtonContainer>
                     <Button title={buttonTitle} path={projectPath} target='_blank' rel='noopener noreferrer' />
                 </ButtonContainer>

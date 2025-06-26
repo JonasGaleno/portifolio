@@ -1,19 +1,19 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
-export const Container = styled.div`
-    padding: 20px 5px 5px 5px;
+export const Container = styled(motion.div)`
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 20px 10px;
     font-weight: 400;
     font-size: 12pt;
-    height: 450px;
     width: 300px;
     border: 1px solid;
     border-color: #dedede;
     border-radius: 15px;
     box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
-    display: flex;
     background-color: #fffafa;
     color: #000;
-    flex-direction: column;
 `;
 
 export const HeaderSection = styled.div`

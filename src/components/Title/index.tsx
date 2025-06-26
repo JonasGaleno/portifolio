@@ -11,8 +11,15 @@ export default function Title ({
     ...rest
 }: PropsTitle) {
     return (
-        <Container>
-            <TitleHeading>{title}</TitleHeading>
+        <Container
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+        >
+            <TitleHeading>
+                {title}
+            </TitleHeading>
             <Separator />
         </ Container>
     );
