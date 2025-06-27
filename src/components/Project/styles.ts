@@ -80,9 +80,9 @@ export const ProjectImage = styled.img`
     object-fit: cover;
 
     @media screen and (max-width: 400px) { // 430
-        width: 279px;
-        height: 160px;
-        margin-top: 72px;
+        width: 280px;
+        height: 162px;
+        margin-top: 41px;
     }
 
     @media screen and (min-width: 401px) and (max-width: 767px) {
